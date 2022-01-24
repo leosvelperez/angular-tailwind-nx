@@ -1,0 +1,15 @@
+.card {
+  @apply h-full flex flex-col p-lg shadow-md hover:shadow-lg;
+
+  background-color: theme('colors.secondary.light');
+}
+
+.card-title {
+  @apply text-lg font-bold;
+
+  padding-bottom: theme('spacing.md');
+}
+
+.card-content {
+  @apply mb-xl flex-1;
+}
