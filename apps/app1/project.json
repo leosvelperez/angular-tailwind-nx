@@ -5,7 +5,7 @@
   "prefix": "angular-tailwind-nx",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@nrwl/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/app1",
@@ -51,13 +51,13 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nrwl/web:file-server",
       "configurations": {
         "production": {
-          "browserTarget": "app1:build:production"
+          "buildTarget": "app1:build:production"
         },
         "development": {
-          "browserTarget": "app1:build:development"
+          "buildTarget": "app1:build:development"
         }
       },
       "defaultConfiguration": "development"
