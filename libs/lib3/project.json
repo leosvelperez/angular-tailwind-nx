@@ -1,0 +1,40 @@
+{
+  "projectType": "library",
+  "root": "libs/lib3",
+  "sourceRoot": "libs/lib3/src",
+  "prefix": "angular-tailwind-nx",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/lib3"],
+      "options": {
+        "project": "libs/lib3/ng-package.json",
+        "tailwindConfig": "libs/lib3/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/lib3/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/lib3/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/lib3"],
+      "options": {
+        "jestConfig": "libs/lib3/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/lib3/src/**/*.ts", "libs/lib3/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
