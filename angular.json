@@ -4,6 +4,7 @@
     "app1": "apps/app1",
     "app1-e2e": "apps/app1-e2e",
     "lib1": "libs/lib1",
-    "lib2": "libs/lib2"
+    "lib2": "libs/lib2",
+    "tailwind-preset": "libs/tailwind-preset"
   }
 }
