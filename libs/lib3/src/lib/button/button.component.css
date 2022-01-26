@@ -1,0 +1,3 @@
+.atn-button {
+  @apply py-sm px-md bg-primary-dark hover:bg-primary text-white;
+}
