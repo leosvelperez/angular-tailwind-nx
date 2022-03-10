@@ -65,14 +65,14 @@
       "configurations": {
         "production": {
           "commands": [
-            "rm -rf dist/libs/lib3",
+            "node -e \"require('fs').rmSync('dist/libs/lib3', {recursive: true, force: true})\"",
             "nx run lib3:build-lib:production"
           ],
           "parallel": false
         },
         "development": {
           "commands": [
-            "rm -rf dist/libs/lib3",
+            "node -e \"require('fs').rmSync('dist/libs/lib3', {recursive: true, force: true})\"",
             "nx run lib3:build-lib:development"
           ],
           "parallel": false
