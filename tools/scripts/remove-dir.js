@@ -1,16 +1,13 @@
-#!/usr/bin/env node
-
 const fs = require('fs');
 
-// @see https://regex101.com/library/vzA46H
-const pattern = new RegExp(/(?<=--path[ |=])dist\/.*(?=$)/);
+const args = process.argv.slice(2);
 
-const argvString = process.argv.join(' ').replace(/["']/g, '');
-
-if(pattern.test(argvString)) {
-    const matched = argvString.match(pattern).pop();
-    fs.rmSync(matched, {recursive: true, force: true});
-} else {
-    console.error("Unable to find a 'path' argument with a value containing 'dist' folder.");
-    process.exit(1);
+if (!args.length) {
+  throw new Error('No path specified. Please specify a path to remove.');
+} else if (args.length > 1) {
+  throw new Error(
+    'Too many arguments. Please specify only one path to remove.'
+  );
 }
+
+fs.rmSync(args[0], { recursive: true, force: true });

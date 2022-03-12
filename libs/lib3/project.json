@@ -65,26 +65,20 @@
       "configurations": {
         "production": {
           "commands": [
-            "nx run lib3:remove-dir --path=dist/libs/lib3",
+            "node tools/scripts/remove-dir.js dist/libs/lib3",
             "nx run lib3:build-lib:production"
           ],
           "parallel": false
         },
         "development": {
           "commands": [
-            "nx run lib3:remove-dir --path=dist/libs/lib3",
+            "node tools/scripts/remove-dir.js dist/libs/lib3",
             "nx run lib3:build-lib:development"
           ],
           "parallel": false
         }
       },
       "defaultConfiguration": "production"
-    },
-    "remove-dir": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-          "command": "node tools/scripts/remove-dir.js --path {args.path}"
-      }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
